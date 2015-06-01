@@ -15,6 +15,10 @@ body {
         min-height: 600px;
         height:100vh;
         padding-top: 1px;
+        text-align: center;
+}
+.extendedSection {
+    height:140vh;
 }
 .sectionInner {
     width: 90%;
@@ -26,13 +30,15 @@ body {
 }
 
 .carouselCustom {
-    height: 90%;
-    width: 90%;
-    margin: auto;
+    /*height: 90%;*/
+    /*width: 90%;*/
+    /*margin: auto;*/
     display: none;
+    margin-top: 1em;
 }
 .carouselInner {
     /*margin: 2em 13em 0 15em;*/
+    min-height: 35em;
 }
 
 #navigationBtnGroup {
@@ -41,23 +47,50 @@ body {
     /*margin: 27em 0;*/
 }
 
+.gapDiv {
+    height: 35px;
+}
+
 #navigationBtnGroup button {
     background-color: #e74c3c;
     border: #e74c3c;
 }
 
-.imageDiv {
-    padding-top: 5%;
+.header {
+    /*padding-top: 5%;*/
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
+
+.test {
+    height: 50px;
+    padding: 27px 100px;
+    /*width: 100%;*/
+    line-height: 120px;
+    position: fixed;
+    z-index: 999;
+    max-width: 1290px;
+    padding: 65px 100px;
+    background-color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
 
 .homeBtnGroup {
     text-align:center;
     padding-top: 5%;
 }
-/*.imageDiv > img{*/
-    /*max-width: 100%;*/
-    /*max-height: 100%;*/
-/*}*/
 
 .fixedSideInfo {
     position: fixed;
@@ -75,12 +108,13 @@ body {
     /*-webkit-backface-visibility: hidden;*/
     /*-webkit-transform: scale(1);*/
     /*overflow: hidden;*/
-    background: url("../img/photo1.jpg") 50% 0 repeat fixed;
+    background-color: #475b68;
+    /*background: url("../img/photo1.jpg") 50% 0 repeat fixed;*/
 }
-#workExperience {
+#bio {
     background: url("../img/photo2.jpg") 50% 0 repeat fixed;
 }
-#education {
+#contact {
     background: url("../img/photo1.jpg") 50% 0 repeat fixed;
 }
 #projects {

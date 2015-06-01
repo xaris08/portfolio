@@ -8,8 +8,15 @@ Page.init = (function(options) {
     var firstSection = $(".section")[1];
     Page.preferences = $.extend({
         windowOffset: $(firstSection).offset().top,
-        delay: 1000
+        delay: 1000,
+        sections : {
+            "home": 0,
+            "bio": 1,
+            "projects": 2,
+            "contact": 3
+        }
     }, options);
+
 
     // Parallax effect
 //    $('.section').each(function(){
@@ -100,11 +107,11 @@ Page.util = (function() {
             $("#navbar :nth-child("+ sectionNum +")").addClass("active").siblings().removeClass("active")
             
             switch (sectionNum) {
-                case 2:
+                case Page.preferences.sections.contact:
                     $(".leftDiv").addClass("rightMovingDiv");
                     $(".rightDiv").addClass("leftMovingDiv");
                     break;
-                case 3:
+                case Page.preferences.sections.bio:
                     $(".carouselCustom").show("slow");
             }
             

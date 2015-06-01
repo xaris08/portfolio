@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<nav id="navigationBar" class="navbar navbar-default navbar-fixed-top" >
+<nav id="navigationBar" class="navbar navbar-default navbar-fixed-top" style="display: none">
     <div class="container-fluid container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
@@ -22,25 +22,18 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#workExperience">Page 2</a></li>
-                <li><a href="#education">Page 3</a></li>
-                <li><a href="#projects">Page 4</a></li>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
 <div class="container">
-<div id="home" class="section">
-    
-    <div style="height: 600px">
-        <div class="row imageDiv">
+<div id="home" class="section">    
+    <div class="header">
+        <div class="row">
             <div class="col-lg-3"></div>
-            <div class="col-lg-2">
-                <div>
-                    <img src="img/self.png" alt="Profile Picture">
-                </div>
-            </div>
             <div class="col-lg-4">
                 <div>
                     <h2>Example heading <span class="label">New</span></h2>
@@ -53,44 +46,205 @@
 
         <div class="homeBtnGroup">
             <div id="navigationBtnGroup" class="btn-group-lg" role="group">
-                <button type="button" class="btn btn-default" data-link="#workExperience">Page 2</button>
-                <button type="button" class="btn btn-default" data-link="#education">Page 3</button>
-                <button type="button" class="btn btn-default" data-link="#projects">Page 4</button>
+                <button type="button" class="btn btn-default" data-link="#bio">Bio</button>
+                <button type="button" class="btn btn-default" data-link="#projects">Projects</button>
+                <button type="button" class="btn btn-default" data-link="#contact">Contact</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bio" class="section extendedSection">
+	<div class="gapDiv"></div>
+    <div>
+        <h1>BIO</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-2">
+            <div>
+                <img src="img/profile.jpeg" alt="Profile Picture" style="width:12em;">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div>
+                <h2>Theocharis Katsavos</h2>
+            </div>
+            <div>
+                <h3>Java/Web Developer since 2012</h3>
             </div>
         </div>
     </div>
     
-    <!--<div class="row imageDiv">-->
-        <!--<div class="col-lg-3"></div>-->
-        <!--<div class="col-lg-2">-->
-            <!--<div>-->
-                <!--<img src="img/self.png" alt="Profile Picture">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-lg-4">-->
-            <!--<div>-->
-                <!--<h2>Example heading <span class="label">New</span></h2>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<h3>Example heading <span class="label">New</span></h3>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!---->
-    <!--<div class="homeBtnGroup">-->
-        <!--<div id="navigationBtnGroup" class="btn-group-lg" role="group">-->
-            <!--<button type="button" class="btn btn-default" data-link="#workExperience">Page 2</button>-->
-            <!--<button type="button" class="btn btn-default" data-link="#education">Page 3</button>-->
-            <!--<button type="button" class="btn btn-default" data-link="#projects">Page 4</button>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div id="carousel-education" class="carousel slide carouselCustom "> <!-- data-ride="carousel" -->
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-education" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-education" data-slide-to="1"></li>
+            <li data-target="#carousel-education" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="carouselInner">
+                    <H1>Work Experience</H1>
+                    <div class="gapDiv"></div>
+                    <div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">11/2012 – present</div>
+	                    	<div class="col-md-2">Java/Web Developer</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2"></div>
+	                    	<div class="col-md-2">European Dynamics</div>
+	                    </div>
+                    </div>
+                    <div>
+                    	<p>I am responsible for the design, development, and maintenance of complex web applications from front-end to back-end systems. </p>	
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carouselInner">
+                    <H1>Education</H1>
+                    <div class="gapDiv"></div>
+                    <div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">09/2011 – 09/2012</div>
+	                    	<div class="col-md-2">MSc. In Computer Science</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2"></div>
+	                    	<div class="col-md-2">University of Edinburgh</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">Specialisation</div>
+	                    	<div class="col-lg-4">Software Engineering and High Performance Computing</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">Thesis</div>
+	                    	<div class="col-lg-4">Agent-Based System for Virtual Machine Migration in a Simulated Environment.</div>
+	                    </div>
+                    </div>
+                    <div class="gapDiv"></div>
+                    <div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">09/2005 – 06/2011</div>
+	                    	<div class="col-md-2">BSc. In Informatics</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2"></div>
+	                    	<div class="col-md-2">University of Piraeus</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">Specialisation</div>
+	                    	<div class="col-lg-2">Information Systems</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-lg-4"></div>
+	                    	<div class="col-sm-2">Thesis</div>
+	                    	<div class="col-lg-4">Building an Android Application implementing the Analytic Hierarchy Process (AHP) method.</div>
+	                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carouselInner">
+                    <H1>Experience / Skills</H1>
+                    <div class="gapDiv"></div>
+                    <div>
+                        <h4>Java EE 7</h4>
+                        <h4>Spring</h4>
+                        <h4>Hibernate</h4>
+                        <h4>Javascript</h4>
+                        <h4>AngularJS</h4>
+                        <h4>Maven</h4>
+                        <h4>Git</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-education" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-education" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </div>
 
-<div id="workExperience" class="section">
-    <div class="sectionTitle">
-        <h1>Page 2</h1>
+<div id="projects" class="section">
+	<div class="gapDiv"></div>
+    <div>
+        <h1>Projects</h1>
     </div>
-    <div class="sectionInner">
+    <div style="text-align: center">
+        <div class="row">
+        	<div class="col-md-1"></div>
+            <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                    <!-- <img src="img/self.png" alt="..."> -->
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                    <!-- <img src="img/self.png" alt="..."> -->
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-md-4"></div>
+            <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                    <!-- <img src="img/self.png" alt="..."> -->
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                    <!-- <img src="img/self.png" alt="..."> -->
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact" class="section">
+	<div class="gapDiv"></div>
+	<div>
+        <h1>Contact</h1>
+    </div>
+    <!-- <div class="sectionInner">
         <div id="div1" class="leftDiv">
             <h3>Task 1</h3>
             Lorem Ipsum dolor sit Amet <br>
@@ -115,117 +269,19 @@
             Lorem Ipsum dolor sit Amet <br>
             Lorem Ipsum dolor sit Amet 
         </div>
-    </div>
+	</div> -->
 </div>
+</div><!-- container -->
 
-<div id="education" class="section">
-    <div class="sectionTitle">
-        <h1>Page 3</h1>
-    </div>
-    <div id="carousel-education" class="carousel slide carouselCustom"> <!-- data-ride="carousel" -->
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-education" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-education" data-slide-to="1"></li>
-            <li data-target="#carousel-education" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner " role="listbox">
-            <div class="item active">
-                <div class="carouselInner">
-                    <H1>Title 1</H1>
-                    <div>
-                        <h3>Task 2</h3>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet
-                    </div>
-                    <div>
-                        <h3>Task 2</h3>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="carouselInner">
-                    <H1>Title 2</H1>
-                    <div>
-                        <h3>Task 2</h3>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet
-                    </div>
-                    <div>
-                        <h3>Task 2</h3>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="carouselInner">
-                    <H1>Title 3</H1>
-                    <div>
-                        <h3>Task 2</h3>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet
-                    </div>
-                    <div>
-                        <h3>Task 2</h3>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet <br>
-                        Lorem Ipsum dolor sit Amet
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-education" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-education" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
-
-<div id="projects" class="section">
-    <div class="sectionTitle">
-        <h1>Page 4</h1>
-    </div>
-</div>
-
-<div id="sideInfo" class="fixedSideInfo">
+<!-- <div id="sideInfo" class="fixedSideInfo">
     <button type="button" class="btn btn-xs" data-toggle="popover" style="background-color: #e74c3c">
         <span class="glyphicon glyphicon-info-sign"></span>
     </button>
-</div>
+</div> -->
 
 <div class="backToTop">
     <a href="#home"><span class="glyphicon glyphicon-arrow-up"></span></a>
 </div>
-
-</div><!--container-->
 </body>
 
 <script text="type/javascript" src="js/jquery-2.1.0.js"></script>
