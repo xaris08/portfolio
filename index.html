@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<!-- <div class="container"> -->
 <div id="home" class="section">    
     <div class="header">
         <div class="row">
@@ -163,7 +164,39 @@
                 <div class="carouselInner">
                     <H1>Experience / Skills</H1>
                     <div class="gapDiv"></div>
-                    <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <strong>Skill 1</strong>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <strong>Skill 2</strong>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <strong>Skill 3</strong>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div>
                         <h4>Java EE 7</h4>
                         <h4>Spring</h4>
                         <h4>Hibernate</h4>
@@ -171,7 +204,7 @@
                         <h4>AngularJS</h4>
                         <h4>Maven</h4>
                         <h4>Git</h4>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -195,54 +228,152 @@
     </div>
     <div style="text-align: center">
         <div class="row">
-        	<div class="col-md-1"></div>
-            <div class="col-sm-5 col-md-3">
-                <div class="thumbnail">
-                    <!-- <img src="img/self.png" alt="..."> -->
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="img/game.jpg">
+                        </div>
+                        <div class="back">
+                            <p>A simple Javascript 2D game using the Quintus Game Engine framework.</p>
+                            <p>Feel free to play and comment.</p>
+                            <p><a href="#">Discover it!</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5 col-md-3">
-                <div class="thumbnail">
-                    <!-- <img src="img/self.png" alt="..."> -->
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+            <div class="col-sm-3 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="img/doodle.jpg">
+                        </div>
+                        <div class="back">
+                            <p>A simple search Engine implemented on Lucene.</p>
+                            <p>The search is a university project. It is based on searching
+                                on a dictionary of selected papers.</p>
+                            <p>Search regarding the Author, Abstract, Title.</p>
+                            <p><a href="#">Discover it!</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!--<div class="col-sm-3 col-sm-3">-->
+                <!--<div class="flip-container" ontouchstart="this.classList.toggle('hover');">-->
+                    <!--<div class="flipper">-->
+                        <!--<div class="front">-->
+                            <!--<img src="img/haunted.png">-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                            <!--<p>Name: A Java haunting game.</p>-->
+                            <!--<p>Part of a University project, Name is a java desktop application implemented-->
+                                <!--on Swing.</p>-->
+                            <!--<p>You may find screen-shots <a href="#">here!</a></p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
+        <div style="height: 80px;"></div>
         <div class="row">
-        	<div class="col-md-4"></div>
-            <div class="col-sm-5 col-md-3">
-                <div class="thumbnail">
-                    <!-- <img src="img/self.png" alt="..."> -->
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="img/android.jpg">
+                        </div>
+                        <div class="back">
+                            <p>Undergraduate Thesis</p>
+                            <p>An android application implementing the Analytic Hierarchy Process (AHP).</p>
+                            <p>You may find screen-shots <a href="#">here!</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5 col-md-3">
-                <div class="thumbnail">
-                    <!-- <img src="img/self.png" alt="..."> -->
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p style="color: #000000">Lorem Ipsum Dolor Sit Amet</p>
+            <div class="col-sm-3 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="img/agents.png">
+                        </div>
+                        <div class="back">
+                            <p>Master Thesis</p>
+                            <p>Implement a Multi-Agent System for Virtual Machine migration in a 
+                                Cloud Environment.</p>
+                            <p>You may find screen-shots <a href="#">here!</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!--<div class="col-sm-3 col-sm-3">-->
+                <!--<div class="flip-container" ontouchstart="this.classList.toggle('hover');">-->
+                    <!--<div class="flipper">-->
+                        <!--<div class="front">-->
+                            <!--<img src="img/spark.png">-->
+                        <!--</div>-->
+                        <!--<div class="back">-->
+                            <!--<p>Implement a simple movie recommendation system.</p>-->
+                            <!--<p>This is part of a tutorial of the Spark Summit 2014.</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
 
 <div id="contact" class="section">
 	<div class="gapDiv"></div>
-	<div>
-        <h1>Contact</h1>
+	<div class="gapDiv"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <h2>Contact Me</h2>
+                <p>Interested in getting in touch? Feel free to contact me.</p>
+                <hr>
+                <div>
+                    <h5><i class="fa fa-map-marker fa-lg icon"></i>Athens, Greece</i></h5>
+                    <!--<h5><span class="glyphicon glyphicon-map-marker icon"></span>Athens, Greece</h5>-->
+                    <!--<h5><span class="glyphicon glyphicon-phone icon"></span>+30 6976 794 807</h5>-->
+                    <h5><i class="fa fa-mobile fa-2x icon"></i>+30 6976 794 807</h5>
+                    <h5><i class="fa fa-envelope-o fa-lg icon" style="padding: 10px 47px;"></i>charis.katsavos@gmail.com</h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <a href='https://www.linkedin.com/' target='_blank' class="icon" style="float: left;"><i class="fa fa-linkedin fa-lg"></i></a>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href='https://www.xing.com/de' target='_blank' class="icon" style="float: left;"><i class="fa fa-xing fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <form id="contactForm">
+                    <div class="form">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user" style="color: #475b68;"></span></span>
+                            <input type="text" class="form-control noborder" id="contactName" placeholder="Name" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" style="color: #475b68;"></span></span>
+                            <input type="text" class="form-control noborder" id="contactMail" placeholder="Email" aria-describedby="basic-addon1">
+                        </div>
+                        <div>
+                            <textarea id="contactMessage" class="noborder" placeholder="Your message here..." rows="12" cols="57"></textarea>
+                        </div>
+
+                        <div class="btn-group" role="group">
+                            <!--<button id="sendBtn" type="button" class="btn btn-default">Send</button>-->
+                            <button id="sendBtn" onclick="Page.util.sendMail()" class="btn btn-default">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <!-- <div class="sectionInner">
         <div id="div1" class="leftDiv">
@@ -271,7 +402,9 @@
         </div>
 	</div> -->
 </div>
-</div><!-- container -->
+
+<!-- </div> -->
+
 
 <!-- <div id="sideInfo" class="fixedSideInfo">
     <button type="button" class="btn btn-xs" data-toggle="popover" style="background-color: #e74c3c">
@@ -282,6 +415,7 @@
 <div class="backToTop">
     <a href="#home"><span class="glyphicon glyphicon-arrow-up"></span></a>
 </div>
+
 </body>
 
 <script text="type/javascript" src="js/jquery-2.1.0.js"></script>

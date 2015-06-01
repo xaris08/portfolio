@@ -15,10 +15,11 @@ body {
         min-height: 600px;
         height:100vh;
         padding-top: 1px;
-        text-align: center;
+        /*text-align: center;*/
 }
 .extendedSection {
     height:140vh;
+    text-align: center;
 }
 .sectionInner {
     width: 90%;
@@ -193,10 +194,66 @@ body {
     display: block;
 }
 
+
+/** flipping images 
+ * Special thanks to David Walsh for the flipping CSS
+ **/
+.flip-container {
+    perspective: 1000;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+.flip-container, .front, .back {
+    width: 260px;
+    height: 170px;
+}
+.flip-container img{
+    height: 100%;
+    width: 100%;
+}
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+}
+
+
+/* Form related */
+.form {padding: 20px; background-color: white; }
+.icon { padding: 10px 50px; }
+.noborder { border: white; }
+textarea {color: #000000}
+
+/***********************/
 /* CUSTOM Bootstrap CSS*/
 .container .text-muted {margin: 20px 0;color: #f1f1f1;}
 .popover { background-color: #e74c3c; }
 .popover.right>.arrow:after { border-right-color: #e74c3c; }
+.buttonsDiv{border-top: 3px double #E0E0E0;padding-top: 1em;padding-bottom: 1em;margin-top:0;margin-bottom:1em;margin-right:0!important;margin-left:0!important;float:left;width:100%}
+.input-group {padding-bottom: 20px;}
+.input-group-addon {background-color: white; border: 0 white;}
 
 /* Coloured navigation bar */
 .navbar-default {

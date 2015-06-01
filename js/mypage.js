@@ -47,8 +47,8 @@ Page.init = (function(options) {
         return false;
     });
 
-    Page.csrf.enable();
-    Page.util.initPopover();
+    //Page.csrf.enable();
+    //Page.util.initPopover();
 });
 
 Page.csrf = (function() {
@@ -117,18 +117,42 @@ Page.util = (function() {
             
             return false;
         },
-        
-        initPopover: function() {
-            $('[data-toggle="popover"]').popover({
-                animation: true,
-                title: "",
-                trigger: "focus",
-                html: true,
-                content: "<div style='background-color: #e74c3c'>" +
-                         "<span class='glyphicon glyphicon-envelope' style='color:black'></span><br>" +
-                         "<a href='https://www.linkedin.com/' target='_blank'><img src='img/linkedin.gif'></a><br>" +
-                         "<a href='https://www.xing.com/de' target='_blank'><img src='img/xing.png'></a></div>"
+        sendMail: function() {
+            var request = {
+                name: $("#contactName").val(),
+                mail: $("#contactMail").val(),
+                msg: $("#contactMessage").val()
+            }
+
+            $.ajax({
+                type : "post",
+                url : "php/send.php",
+                data: request,
+                dataType: "json",
+                cache : false,
+                success : function(response) {
+                    if (response.success) {
+                        alert(response.msg);
+                    } else {
+                        console.error("Mail has not been sent.");
+                    }
+                },
+                error: function(e) {
+                    console.error("Message sent error: " + e);
+                }
             });
         }
+        // initPopover: function() {
+        //     $('[data-toggle="popover"]').popover({
+        //         animation: true,
+        //         title: "",
+        //         trigger: "focus",
+        //         html: true,
+        //         content: "<div style='background-color: #e74c3c'>" +
+        //                  "<span class='glyphicon glyphicon-envelope' style='color:black'></span><br>" +
+        //                  "<a href='https://www.linkedin.com/' target='_blank'><img src='img/linkedin.gif'></a><br>" +
+        //                  "<a href='https://www.xing.com/de' target='_blank'><img src='img/xing.png'></a></div>"
+        //     });
+        // }
     }
 })();
