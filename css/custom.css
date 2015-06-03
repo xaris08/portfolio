@@ -22,7 +22,7 @@ body {
 }
 #bio { background: url("../img/photo2.jpg") 50% 0 repeat fixed; }
 #projects { background: url("../img/photo3.jpg") 50% 0 repeat fixed; }
-#contact { background: url("../img/photo1.jpg") 50% 0 repeat fixed;}
+#contact { background: url("../img/photo1.jpg") 50% 0 repeat;}
 
 .section {
         position: relative;
@@ -197,6 +197,7 @@ body {
 
 /***********************/
 /* CUSTOM Bootstrap CSS*/
+.row { width: 100%;}
 .container .text-muted {margin: 20px 0;color: #f1f1f1;}
 .popover { background-color: #e74c3c; }
 .popover.right>.arrow:after { border-right-color: #e74c3c; }
