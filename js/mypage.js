@@ -139,18 +139,25 @@ Page.util = (function() {
                 data: request,
                 dataType: "json",
                 success : function(response) {
-                    console.log(response)
                     if (response.success) {
-                        alert("Message sent successfully!");
                         $(".form input[type=text], .form textarea").val("");
+                        Page.util.showAlert("Message sent successfully!");
                     } else {
-                        alert("Message not sent. Please try again.");
+                        Page.util.showAlert("Message not sent. Please try again.");
                     }
                 },
                 error: function(e) {
-                    alert("Message not sent. Please try again.");
+                    Page.util.showAlert("Message not sent. Please try again.");
                 }
             });
+        },
+        
+        showAlert: function(msg) {
+            $("#collapseAlert .alert").html(msg);
+            $("#collapseAlert").collapse("show");
+            setTimeout(function(){
+                $("#collapseAlert").collapse("hide");
+            },1300);
         }
     }
 })();
