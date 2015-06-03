@@ -10,10 +10,10 @@ Page.init = (function(options) {
         windowOffset: $(firstSection).offset().top,
         delay: 1000,
         sections : {
-            "home": 0,
-            "bio": 1,
-            "projects": 2,
-            "contact": 3
+            "home": 1,
+            "bio": 2,
+            "projects": 3,
+            "contact": 4
         }
     }, options);
 
