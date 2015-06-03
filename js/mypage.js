@@ -47,8 +47,17 @@ Page.init = (function(options) {
         return false;
     });
 
+    $("#sendBtn").on("click", function(){
+        Page.util.sendMail();
+    });
+
+//    $(document).on('submit', '#contactForm', function (event) {
+//        event.preventDefault();
+//    }).on('click', '#sendBtn', function(){
+//            Page.util.sendMail();
+//    });
+
     //Page.csrf.enable();
-    //Page.util.initPopover();
 });
 
 Page.csrf = (function() {
@@ -120,7 +129,7 @@ Page.util = (function() {
         sendMail: function() {
             var request = {
                 name: $("#contactName").val(),
-                mail: $("#contactMail").val(),
+                from: $("#contactMail").val(),
                 msg: $("#contactMessage").val()
             }
 
@@ -129,30 +138,19 @@ Page.util = (function() {
                 url : "php/send.php",
                 data: request,
                 dataType: "json",
-                cache : false,
                 success : function(response) {
+                    console.log(response)
                     if (response.success) {
-                        alert(response.msg);
+                        alert("Message sent successfully!");
+                        $(".form input[type=text], .form textarea").val("");
                     } else {
-                        console.error("Mail has not been sent.");
+                        alert("Message not sent. Please try again.");
                     }
                 },
                 error: function(e) {
-                    console.error("Message sent error: " + e);
+                    alert("Message not sent. Please try again.");
                 }
             });
         }
-        // initPopover: function() {
-        //     $('[data-toggle="popover"]').popover({
-        //         animation: true,
-        //         title: "",
-        //         trigger: "focus",
-        //         html: true,
-        //         content: "<div style='background-color: #e74c3c'>" +
-        //                  "<span class='glyphicon glyphicon-envelope' style='color:black'></span><br>" +
-        //                  "<a href='https://www.linkedin.com/' target='_blank'><img src='img/linkedin.gif'></a><br>" +
-        //                  "<a href='https://www.xing.com/de' target='_blank'><img src='img/xing.png'></a></div>"
-        //     });
-        // }
     }
 })();

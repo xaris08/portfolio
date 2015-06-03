@@ -352,26 +352,22 @@
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
-                <form id="contactForm">
-                    <div class="form">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-user" style="color: #475b68;"></span></span>
-                            <input type="text" class="form-control noborder" id="contactName" placeholder="Name" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" style="color: #475b68;"></span></span>
-                            <input type="text" class="form-control noborder" id="contactMail" placeholder="Email" aria-describedby="basic-addon1">
-                        </div>
-                        <div>
-                            <textarea id="contactMessage" class="noborder" placeholder="Your message here..." rows="12" cols="57"></textarea>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                            <!--<button id="sendBtn" type="button" class="btn btn-default">Send</button>-->
-                            <button id="sendBtn" onclick="Page.util.sendMail()" class="btn btn-default">Send</button>
-                        </div>
+                <div class="form">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user" style="color: #475b68;"></span></span>
+                        <input type="text" class="form-control noborder" id="contactName" placeholder="Name" aria-describedby="basic-addon1">
                     </div>
-                </form>
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" style="color: #475b68;"></span></span>
+                        <input type="text" class="form-control noborder" id="contactMail" placeholder="Email" aria-describedby="basic-addon1">
+                    </div>
+                    <div>
+                        <textarea id="contactMessage" class="noborder" placeholder="Your message here..." rows="12"></textarea>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id="sendBtn" class="btn btn-default">Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

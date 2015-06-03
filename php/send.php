@@ -1,21 +1,38 @@
 <?php
 
-if (is_ajax()) 
-        $name = htmlspecialchars($_POST['name']);
-        $msg = htmlspecialchars($_POST['msg']);
-        $headers = "From: " . $_POST['mail'] . "\r\n";
+if (is_ajax()) {
+        if (isset($_POST["name"]) && !empty($_POST["name"]) && isset($_POST["msg"]) 
+                && !empty($_POST["msg"]) && isset($_POST["from"]) && !empty($_POST["from"])) {
 
-        // mail($to,$subject,$txt,$headers);
-        bool mail('charis.katsavos@gmail.com', 'Mail from page ', str_replace("\n.", "\n..", $msg), $headers);
+                $name = htmlspecialchars($_POST['name']);
+                $msg = htmlspecialchars($_POST['msg']);
+                $from = htmlspecialchars($_POST['from']);
 
-        // $return = $_POST;
-        //$return["json"] = json_encode($return); //JSON encode $return
+                require('PHPMailerAutoload.php');
 
-        echo json_encode({success: true, msg: 'Message sent.'});
+                $mail = new PHPMailer;
+                $mail->IsSMTP();  // telling the class to use SMTP
+                $mail->Host     = "zmail.eurodyn.com"; // smtp.live.com
+                $mail->From     = "charis.katsavos@eurodyn.com";
+                $mail->AddAddress("charis.katsavos@gmail.com");
+                $mail->Subject  = "Portfolio msg from: ".$from;
+                $mail->Body     = "Name: ".$name." and message: ".$msg;
 
+                $arrayName = array("from" =>  $from);
+                // if(!$mail->Send()) {
+                //         $arrayName["success"] = "false";
+                //         // $arrayName['error'] = $mail->ErrorInfo;
+                // } else {
+                //         $arrayName["success"] = "true";
+                // }
+                $arrayName["success"] = "true";
+                echo json_encode($arrayName);
+        }
+}
 
 function is_ajax() {
-        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 }
+
 
 ?>
