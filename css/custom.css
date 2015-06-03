@@ -34,28 +34,21 @@ body {
     height:140vh;
     text-align: center;
 }
-.sectionInner {
-    width: 90%;
-    margin: auto;
-}
 
 .carouselCustom { display: none;margin-top: 1em; }
 .carouselInner { min-height: 35em; }
+.gapDiv { height: 35px; }
 
 #navigationBtnGroup {
     display: inline-block;
     padding-left: 0;
 }
-
-.gapDiv { height: 35px; }
-
 #navigationBtnGroup button {
     background-color: #e74c3c;
     border: #e74c3c;
 }
 
-.header {
-    /*padding-top: 5%;*/
+.home-header {
     width: 100%;
     margin: auto;
     position: absolute;
@@ -69,12 +62,6 @@ body {
 .homeBtnGroup {
     text-align:center;
     padding-top: 5%;
-}
-
-.fixedSideInfo {
-    position: fixed;
-    top: 45em;
-    z-index: 1;
 }
 
 /* moving divs */
