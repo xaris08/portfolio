@@ -50,22 +50,13 @@ Page.init = (function(options) {
     $("#sendBtn").on("click", function(){
         Page.util.sendMail();
     });
-
-//    $(document).on('submit', '#contactForm', function (event) {
-//        event.preventDefault();
-//    }).on('click', '#sendBtn', function(){
-//            Page.util.sendMail();
-//    });
-
     //Page.csrf.enable();
 });
 
 Page.csrf = (function() {
-
     /* Many thanks to Corey Maynard for the following code.
      * Got it from http://coreymaynard.com/blog/performing-ajax-post-requests-in-django/
      **/
-
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
@@ -83,7 +74,6 @@ Page.csrf = (function() {
     }
 
     return {
-
         enable: function() {
             $.ajaxSetup({
                 beforeSend: function(xhr, settings) {
@@ -123,7 +113,6 @@ Page.util = (function() {
                 case Page.preferences.sections.bio:
                     $(".carouselCustom").show("slow");
             }
-            
             return false;
         },
         sendMail: function() {
