@@ -50,6 +50,24 @@ Page.init = (function(options) {
     $("#sendBtn").on("click", function(){
         Page.util.sendMail();
     });
+    
+//    $(".flip-container").on("click mouseenter mouseleave", function(e){
+//        console.log(e.type)
+//        if (e.type == "mouseenter"){
+//            $(this).addClass("hover").find(".flipper").addClass("rotate");
+//            e.preventDefault();
+//        } else if (e.type == "mouseleave") {
+//            $(this).removeClass("hover").find(".flipper").removeClass("rotate");
+//            e.preventDefault();
+//        } else if (e.type == "click"){
+//            $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
+//            e.preventDefault();
+//        }
+//    });
+    $(".flip-container").click(function(){
+        $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
+    });
+    
     //Page.csrf.enable();
 });
 
