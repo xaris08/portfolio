@@ -7,15 +7,28 @@ body {
     background-color: whitesmoke;
 }
 
+#home {
+    /*position: relative;*/
+    /*text-align: center;*/
+    /*height: 100vh;*/
+    /*width: 100%;*/
+    /*overflow: hidden;*/
+    /*background-color: #707C80;*/
+    /*-webkit-backface-visibility: hidden;*/
+    /*-webkit-transform: scale(1);*/
+    /*overflow: hidden;*/
+    background-color: #475b68;
+    /*background: url("../img/photo1.jpg") 50% 0 repeat fixed;*/
+}
+#bio { background: url("../img/photo2.jpg") 50% 0 repeat fixed; }
+#contact { background: url("../img/photo1.jpg") 50% 0 repeat fixed; }
+#projects { background: url("../img/photo3.jpg") 100% 0 repeat; }
+
 .section {
-        /*width: 100%;*/
         position: relative;
-        /*margin: 0 auto;*/
-        /*padding: 4em 0 20px 0;*/
         min-height: 600px;
         height:100vh;
         padding-top: 1px;
-        /*text-align: center;*/
 }
 .extendedSection {
     height:140vh;
@@ -25,32 +38,16 @@ body {
     width: 90%;
     margin: auto;
 }
-.sectionTitle {
-    /*margin-left: 10em;*/
-    /*margin-top: 3em;*/
-}
 
-.carouselCustom {
-    /*height: 90%;*/
-    /*width: 90%;*/
-    /*margin: auto;*/
-    display: none;
-    margin-top: 1em;
-}
-.carouselInner {
-    /*margin: 2em 13em 0 15em;*/
-    min-height: 35em;
-}
+.carouselCustom { display: none;margin-top: 1em; }
+.carouselInner { min-height: 35em; }
 
 #navigationBtnGroup {
     display: inline-block;
     padding-left: 0;
-    /*margin: 27em 0;*/
 }
 
-.gapDiv {
-    height: 35px;
-}
+.gapDiv { height: 35px; }
 
 #navigationBtnGroup button {
     background-color: #e74c3c;
@@ -78,29 +75,6 @@ body {
     position: fixed;
     top: 45em;
     z-index: 1;
-}
-
-#home {
-    /*position: relative;*/
-    /*text-align: center;*/
-    /*height: 100vh;*/
-    /*width: 100%;*/
-    /*overflow: hidden;*/
-    /*background-color: #707C80;*/
-    /*-webkit-backface-visibility: hidden;*/
-    /*-webkit-transform: scale(1);*/
-    /*overflow: hidden;*/
-    background-color: #475b68;
-    /*background: url("../img/photo1.jpg") 50% 0 repeat fixed;*/
-}
-#bio {
-    background: url("../img/photo2.jpg") 50% 0 repeat fixed;
-}
-#contact {
-    background: url("../img/photo1.jpg") 50% 0 repeat fixed;
-}
-#projects {
-    background: url("../img/photo3.jpg") 100% 0 repeat;
 }
 
 /* moving divs */
@@ -149,7 +123,9 @@ body {
 }
 /* end - moving divs */
 
-/*back-top button*/
+/**  
+ * 'Back to top' button
+ **/
 .backToTop {
     width: 58px;
     height: 58px;
@@ -210,7 +186,6 @@ body {
 /* hide back of pane during swap */
 .front, .back {
     backface-visibility: hidden;
-
     position: absolute;
     top: 0;
     left: 0;
