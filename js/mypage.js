@@ -73,9 +73,9 @@ Page.init = (function(options) {
 //            e.preventDefault();
 //        }
 //    });
-    $(".flip-container").click(function(){
-        $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
-    });
+//    $(".flip-container").click(function(){
+//        $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
+//    });
     
     //Page.csrf.enable();
 });
