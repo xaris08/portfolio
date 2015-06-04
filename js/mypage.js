@@ -4,25 +4,20 @@ Page.preferences = {};
 
 Page.init = (function(options) {
 
-    var $window = $(window);
-    var firstSection = $(".section")[1];
     Page.preferences = $.extend({
-        windowOffset: $(firstSection).offset().top,
+        windowOffset: 0, // set on initHeights function
         delay: 1000,
         sections : {
             "home": 1,
             "bio": 2,
             "projects": 3,
             "contact": 4
-        },
-        windowHeight: $window.height()
-    }, options);
-
+        }
+    });
 
     // Parallax effect
 //    $('.section').each(function(){
 //        var $bgobj = $(this); // assigning the object
-
         $(window).scroll(function() {
             // Scroll the background UP to (negative value of yPos) to get this effect
 //            var yPos = -($window.scrollTop() / 10);
@@ -30,7 +25,6 @@ Page.init = (function(options) {
 //            var coords = '50% '+ yPos + 'px';
 //            // Move the background
 //            $bgobj.css({ backgroundPosition: coords });
-
             Page.util.setOnScrollActions.apply(this);
         });
 //    });
@@ -40,10 +34,7 @@ Page.init = (function(options) {
         var selector = $(this).attr("href") || $(this).data("link"),
             offset = $(selector).offset().top;
 
-        $('html,body').animate({
-            scrollTop: offset
-        }, Page.preferences.delay);
-
+        $('html,body').animate({ scrollTop: offset }, Page.preferences.delay);
         $(this).parent("li").addClass("active").siblings().removeClass("active");
         return false;
     });
@@ -52,31 +43,14 @@ Page.init = (function(options) {
         Page.util.sendMail();
     });
 
-    $("#home").height(Page.preferences.windowHeight);
-    $(".section").css({"min-height": Page.preferences.windowHeight});
-    $(window).resize(function(){
-        $("#home").height(Page.preferences.windowHeight);
-        $(".section").css({"min-height": Page.preferences.windowHeight});
-    });
-
-
-//    $(".flip-container").on("click mouseenter mouseleave", function(e){
-//        console.log(e.type)
-//        if (e.type == "mouseenter"){
-//            $(this).addClass("hover").find(".flipper").addClass("rotate");
-//            e.preventDefault();
-//        } else if (e.type == "mouseleave") {
-//            $(this).removeClass("hover").find(".flipper").removeClass("rotate");
-//            e.preventDefault();
-//        } else if (e.type == "click"){
-//            $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
-//            e.preventDefault();
-//        }
-//    });
 //    $(".flip-container").click(function(){
 //        $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
 //    });
-    
+
+    $(window).resize(function() {
+        Page.util.initHeights();
+    });
+    Page.util.initHeights();
     //Page.csrf.enable();
 });
 
@@ -116,15 +90,23 @@ Page.csrf = (function() {
 
 Page.util = (function() {
     return {
+        initHeights: function(){
+            var windowHeight = $(window).height();
+            $("#home").height(windowHeight);
+            $(".section").css({"min-height": windowHeight});
+            
+            var firstSection = $(".section")[1];
+            Page.preferences.windowOffset = $(firstSection).offset().top;
+        },
         setOnScrollActions: function() {
             /* Set buttons on home screen and navigation bar (fixed on top) for other sections */
             if ($(this).scrollTop() > (Page.preferences.windowOffset - 200)) {
                 $("#navigationBar").show("slow");
                 $("#navigationBtnGroup").hide("slow");
-                $(".backToTop ").show("slow")
+                $(".backToTop").show("slow")
             } else {
                 $("#navigationBar").hide("slow");
-                $(".backToTop ").hide("slow")
+                $(".backToTop").hide("slow")
                 $("#navigationBtnGroup").show("slow");
             }
             

@@ -136,7 +136,6 @@ body {
 .backToTop > a {
     width: 58px;
     height: 58px;
-    /*background-image: url('img/arrow.png');*/
     display: block;
 }
 .backToTop span {
