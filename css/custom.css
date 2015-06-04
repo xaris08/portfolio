@@ -26,18 +26,18 @@ body {
 
 .section {
         position: relative;
-        min-height: 600px;
-        height:100vh;
+        /*min-height: 600px;*/
+        /*height:100vh;*/
         padding-top: 1px;
 }
 .extendedSection {
-    height:140vh;
+    /*height:140vh;*/
     text-align: center;
 }
 
 .carouselCustom { display: none; margin-top: 1em; }
 .carouselInner { height: 37em; }
-.carousel { position: initial; }
+/*.carousel { position: initial; }*/
 .gapDiv { height: 35px; }
 
 #navigationBtnGroup {

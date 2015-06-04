@@ -14,7 +14,8 @@ Page.init = (function(options) {
             "bio": 2,
             "projects": 3,
             "contact": 4
-        }
+        },
+        windowHeight: $window.height()
     }, options);
 
 
@@ -50,7 +51,15 @@ Page.init = (function(options) {
     $("#sendBtn").on("click", function(){
         Page.util.sendMail();
     });
-    
+
+    $("#home").height(Page.preferences.windowHeight);
+    $(".section").css({"min-height": Page.preferences.windowHeight});
+    $(window).resize(function(){
+        $("#home").height(Page.preferences.windowHeight);
+        $(".section").css({"min-height": Page.preferences.windowHeight});
+    });
+
+
 //    $(".flip-container").on("click mouseenter mouseleave", function(e){
 //        console.log(e.type)
 //        if (e.type == "mouseenter"){
