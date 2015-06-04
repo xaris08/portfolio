@@ -19,7 +19,9 @@ body {
     /*overflow: hidden;*/
     background-color: #475b68;
     /*background: url("../img/photo1.jpg") 50% 0 repeat fixed;*/
+    /*background-color: #E8E9E9;*/
 }
+#home * { color: #000000; }
 #bio { background: url("../img/photo2.jpg") 50% 0 repeat fixed; }
 #projects { background: url("../img/photo3.jpg") 50% 0 repeat fixed; }
 #contact { background: url("../img/photo1.jpg") 50% 0 repeat;}
