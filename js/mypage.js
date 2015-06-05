@@ -35,7 +35,6 @@ Page.init = (function(options) {
             offset = $(selector).offset().top;
 
         $('html,body').animate({ scrollTop: offset }, Page.preferences.delay);
-        $(this).parent("li").addClass("active").siblings().removeClass("active");
         return false;
     });
 
@@ -46,6 +45,10 @@ Page.init = (function(options) {
 //    $(".flip-container").click(function(){
 //        $(this).toggleClass("hover").find(".flipper").toggleClass("rotate");
 //    });
+
+    $(".btn-group-lg>button").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){ 
+        $(this).css({"opacity":0.8});
+    });
 
     $(window).resize(function() {
         Page.util.initHeights();
@@ -102,12 +105,10 @@ Page.util = (function() {
             /* Set buttons on home screen and navigation bar (fixed on top) for other sections */
             if ($(this).scrollTop() > (Page.preferences.windowOffset - 200)) {
                 $("#navigationBar").show("slow");
-                $("#navigationBtnGroup").hide("slow");
                 $(".backToTop").show("slow")
             } else {
                 $("#navigationBar").hide("slow");
                 $(".backToTop").hide("slow")
-                $("#navigationBtnGroup").show("slow");
             }
             
             /* select current navigation item */
