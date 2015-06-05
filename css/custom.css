@@ -59,29 +59,42 @@ body {
 .homeBtnGroup { padding-top: 5%; }
 #headerRow { margin-top: 18%; }
 .homeTitle { text-align: left; }
-.homeTitle span { animation: blink 1s infinite; vertical-align: text-bottom;}
+
 .homeTitle p {
     font-size: 33px;
     font-weight: 400;
-    /*letter-spacing: 6px;*/
-    /*margin: 10px 0 0 10px;*/
-    white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    /*margin-right: 30%;*/
-    animation: type 2.5s steps(60, end);
 }
-.homeTitle p:nth-child(2){ animation: type2 3.8s steps(60, end); }
-@keyframes type { from { width: 0; } }
-@keyframes type2{
-    0%{width: 0;}
-    50%{width: 0;}
-    100%{ width: 100; }
+.btn-group-lg>button{
+    animation: appear 3s ease;
+    opacity: 0;
 }
-@keyframes blink{ to{opacity: .0;} }
-@keyframes appear {
-    0% { opacity: 0; }
-    100% { opacity: 0.8; left: -9999px; }
+/** Write effect animation enable only for width > 580px. */
+@media (min-width: 580px) {
+    .homeTitle p { animation: type 2.5s steps(60, end); white-space: nowrap; }
+    .homeTitle p:nth-child(2){ animation: type2 3.8s steps(60, end); }
+    .homeTitle span { animation: blink 1s infinite; vertical-align: text-bottom; }
+    .btn-group-lg>button{ -webkit-animation-delay: 3s; }
+    
+    @keyframes type { from { width: 0; } }
+    @keyframes type2{
+        0%{width: 0;}
+        50%{width: 0;}
+        100%{ width: 100; }
+    }
+    @keyframes blink{ to{opacity: .0;} }
+    @keyframes appear {
+        0% { opacity: 0; }
+        100% { opacity: 0.8; left: -9999px; }
+    }
+}
+@media (max-width: 579px) {
+    .homeTitle p { animation: appear 2.5s ease; font-size: 23px;}
+    @keyframes appear {
+        0% { opacity: 0; }
+        100% { opacity: 0.8; left: -9999px; }
+    }
 }
 .customButton {
     padding: 10px 20px;
@@ -94,15 +107,9 @@ body {
     border-radius: 100px;
     border: 0;
     display: inline-block;
-    /*text-transform: uppercase;*/
     color: #fff;
     font-weight: 800;
     letter-spacing: 2px;
-}
-.btn-group-lg>button{
-    animation: appear 3s ease;
-    -webkit-animation-delay: 3s;
-    opacity: 0;
 }
 .btn-group-lg>button:hover {
     background-color: #660000;
