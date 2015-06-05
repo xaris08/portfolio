@@ -115,14 +115,12 @@ Page.util = (function() {
             var sectionNum = parseInt($(window).scrollTop() / $(window).height() + 0.10) + 1;
             $("#navbar :nth-child("+ sectionNum +")").addClass("active").siblings().removeClass("active")
             
-            switch (sectionNum) {
-                case Page.preferences.sections.contact:
-                    $(".leftDiv").addClass("rightMovingDiv");
-                    $(".rightDiv").addClass("leftMovingDiv");
-                    break;
-                case Page.preferences.sections.bio:
-                    $(".carouselCustom").show("slow");
-            }
+//            switch (sectionNum) {
+//                case Page.preferences.sections.contact:
+//                    $(".leftDiv").addClass("rightMovingDiv");
+//                    $(".rightDiv").addClass("leftMovingDiv");
+//                    break;
+//            }
             return false;
         },
         sendMail: function() {

@@ -34,7 +34,7 @@ body {
     text-align: center;
 }
 
-.carouselCustom { display: none; margin-top: 1em; }
+.carouselCustom { margin-top: 1em; }
 .carouselInner { height: 37em; }
 /*.carousel { position: initial; }*/
 .gapDiv { height: 35px; }
