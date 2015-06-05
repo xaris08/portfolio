@@ -2,7 +2,7 @@ var Page = Page || {};
 
 Page.preferences = {};
 
-Page.init = (function(options) {
+Page.init = (function() {
 
     Page.preferences = $.extend({
         windowOffset: 0, // set on initHeights function
@@ -54,42 +54,7 @@ Page.init = (function(options) {
         Page.util.initHeights();
     });
     Page.util.initHeights();
-    //Page.csrf.enable();
 });
-
-Page.csrf = (function() {
-    /* Many thanks to Corey Maynard for the following code.
-     * Got it from http://coreymaynard.com/blog/performing-ajax-post-requests-in-django/
-     **/
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-
-    return {
-        enable: function() {
-            $.ajaxSetup({
-                beforeSend: function(xhr, settings) {
-                    if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
-                        // Only send the token to relative URLs i.e. locally.
-                        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-                    }
-                }
-            });
-        }
-    }
-})();
 
 Page.util = (function() {
     return {
@@ -110,17 +75,11 @@ Page.util = (function() {
                 $("#navigationBar").hide("slow");
                 $(".backToTop").hide("slow")
             }
-            
+
             /* select current navigation item */
             var sectionNum = parseInt($(window).scrollTop() / $(window).height() + 0.10) + 1;
             $("#navbar :nth-child("+ sectionNum +")").addClass("active").siblings().removeClass("active")
             
-//            switch (sectionNum) {
-//                case Page.preferences.sections.contact:
-//                    $(".leftDiv").addClass("rightMovingDiv");
-//                    $(".rightDiv").addClass("leftMovingDiv");
-//                    break;
-//            }
             return false;
         },
         sendMail: function() {
