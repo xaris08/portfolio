@@ -35,7 +35,7 @@ body {
 }
 
 .carouselCustom { margin-top: 1em; }
-.carouselInner { height: 37em; }
+.carouselInner { height: 100%; font-size: 16px; }
 /*.carousel { position: initial; }*/
 .gapDiv { height: 35px; }
 
@@ -193,6 +193,19 @@ body {
     opacity: 0.8;
     top: 11px;
     right: 1px;
+}
+
+/** 
+ * BIO section - carousel
+ **/
+.table th, .table td {
+    border-top: none !important;
+}
+.table {
+    width: 70%;
+}
+.skillDiv {
+    margin-bottom: 17px;
 }
 
 /** 
