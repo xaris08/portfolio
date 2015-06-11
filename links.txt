@@ -23,3 +23,8 @@ http://spyrestudios.com/28-portfolios-using-portraits-background-photos/
 
 SOOOOOS:
 http://davidwalsh.name/css-flip
+
+
+YSlow:
+http://gtmetrix.com/enable-gzip-compression.html
+http://stackoverflow.com/questions/13972629/add-expires-headers
