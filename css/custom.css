@@ -38,6 +38,7 @@ body {
 .carouselInner { height: 100%; font-size: 16px; }
 /*.carousel { position: initial; }*/
 .gapDiv { height: 35px; }
+.carousel-indicators { bottom: -10px; }
 
 /**
  * HOME section
@@ -199,15 +200,10 @@ body {
 /** 
  * BIO section - carousel
  **/
-.table th, .table td {
-    border-top: none !important;
-}
-.table {
-    width: 70%;
-}
-.skillDiv {
-    margin-bottom: 17px;
-}
+.table th, .table td { border-top: none !important; }
+.table { width: 70%; }
+.table td:nth-child(2) { text-align: left; }
+.skillDiv { margin-bottom: 17px; }
 
 /** 
  * flipping images 
