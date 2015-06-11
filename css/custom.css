@@ -67,35 +67,11 @@ body {
     overflow: hidden;
     width: 100%;
 }
+.btn-group-lg>button:hover { background-color: #660000; }
 .btn-group-lg>button{
     animation: appear 3s ease;
+    -webkit-animation: appear 3s ease;
     opacity: 0;
-}
-/** Write effect animation enable only for width > 580px. */
-@media (min-width: 580px) {
-    .homeTitle p { animation: type 2.5s steps(60, end); white-space: nowrap; }
-    .homeTitle p:nth-child(2){ animation: type2 3.8s steps(60, end); }
-    .homeTitle span { animation: blink 1s infinite; vertical-align: text-bottom; }
-    .btn-group-lg>button{ -webkit-animation-delay: 3s; }
-    
-    @keyframes type { from { width: 0; } }
-    @keyframes type2{
-        0%{width: 0;}
-        50%{width: 0;}
-        100%{ width: 100; }
-    }
-    @keyframes blink{ to{opacity: .0;} }
-    @keyframes appear {
-        0% { opacity: 0; }
-        100% { opacity: 0.8; left: -9999px; }
-    }
-}
-@media (max-width: 579px) {
-    .homeTitle p { animation: appear 2.5s ease; font-size: 23px;}
-    @keyframes appear {
-        0% { opacity: 0; }
-        100% { opacity: 0.8; left: -9999px; }
-    }
 }
 .customButton {
     padding: 10px 20px;
@@ -108,27 +84,51 @@ body {
     border-radius: 100px;
     border: 0;
     display: inline-block;
-    color: #fff;
+    /*color: #fff;*/
     font-weight: 800;
     letter-spacing: 2px;
     outline: 0;
 }
-.btn-group-lg>button:hover {
-    background-color: #660000;
+
+/** Write effect animation enable only for width > 580px. */
+@media all and (min-width: 580px) {
+    .homeTitle p { animation: type 2.5s steps(60, end); white-space: nowrap; -webkit-animation: type 2.5s steps(60, end); white-space: nowrap;}
+    .homeTitle p:nth-child(2){ animation: type2 3.8s steps(60, end); -webkit-animation: type2 3.8s steps(60, end);}
+    .homeTitle span { animation: blink 1s infinite; -webkit-animation: blink 1s infinite; vertical-align: text-bottom; }
+    .btn-group-lg>button{ animation-delay: 3s!important; -webkit-animation-delay: 3s; }
+    
+}
+@media all and (max-width: 579px) {
+    .homeTitle p { animation: appearCompactView 2.5s ease; font-size: 23px; -webkit-animation: appearCompactView 2.5s ease; font-size: 23px;}
+}
+@keyframes type { from { width: 0; } }
+@keyframes type2{
+    0%{width: 0;}
+    50%{width: 0;}
+    100%{ width: 100; }
+}
+@keyframes blink{ to{opacity: .0;} }
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 0.8; left: -9999px; }
+}
+@keyframes appearCompactView {
+    0% { opacity: 0; }
+    100% { opacity: 0.8; left: -9999px; }
 }
 
 /* moving divs */
-@media (min-width: 767px) {
+/*@media (min-width: 767px) {
     .leftDiv, .rightDiv {
         display: none;
     }
     .rightMovingDiv {
         font-weight: bold;
-        /*position: relative;*/
+        *//*position: relative;*//*
         width: 100%;
         height: 100%;
         display: block;
-        -webkit-animation: rightMove 2s forwards; /* Chrome, Safari, Opera */
+        -webkit-animation: rightMove 2s forwards; *//* Chrome, Safari, Opera *//*
         animation: rightMove 2s forwards;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
@@ -140,14 +140,14 @@ body {
     @keyframes rightMove {
         from {margin-left: 0px;}
         to {margin-left: 32%;}
-        /*100% {text-align: center;}*/
+        *//*100% {text-align: center;}*//*
     }
     .leftMovingDiv {
         font-weight: bold;
         width: 100%;
         height: 100%;
         display: block;
-        -webkit-animation: leftMove 2s forwards; /* Chrome, Safari, Opera */
+        -webkit-animation: leftMove 2s forwards; *//* Chrome, Safari, Opera *//*
         animation: leftMove 2s forwards;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
@@ -160,7 +160,7 @@ body {
         from {margin-left: 100%;}
         to {margin-left: 32%;}
     }
-}
+}*/
 /* end - moving divs */
 
 /**  
@@ -211,11 +211,39 @@ body {
  **/
 .flip-container {
     perspective: 1000;
+    -webkit-perspective: 1000;
+    -ms-perspective: 1000;
 }
 /* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
+/*.flip-container:hover .flipper, .flip-container.hover .flipper {*/
+    /*transform: rotateY(180deg);*/
+    /*-webkit-transform: rotateY(180deg);*/
+    /*-ms-transform: rotateY(180deg);*/
+/*}*/
+
+/* for IE 10 */
+.flip-container:hover .back {
+    transform: rotateY(0deg);
+}
+.flip-container:hover .front {
     transform: rotateY(180deg);
 }
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* IE 10 */
 /*.flip-container.hover .flipper {*/
     /*transform: rotateY(180deg);*/
 /*}*/
@@ -230,12 +258,17 @@ body {
 /* flip speed goes here */
 .flipper {
     transition: 0.6s;
+    -webkit-transition: 0.6s;
+    -ms-transition: 0.6s;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
     position: relative;
 }
 /* hide back of pane during swap */
 .front, .back {
     backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -245,10 +278,14 @@ body {
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
 }
 /* back, initially hidden pane */
 .back {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
 }
 
 /* Form related */
