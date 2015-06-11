@@ -23,16 +23,8 @@ body {
 #projects { background: url("../img/photo3.jpg") 50% 0 repeat fixed; }
 #contact { background: url("../img/photo1.jpg") 50% 0 repeat; font-size: 16px;}
 
-.section {
-        position: relative;
-        /*min-height: 600px;*/
-        /*height:100vh;*/
-        padding-top: 1px;
-}
-.extendedSection {
-    /*height:140vh;*/
-    text-align: center;
-}
+.section { position: relative; padding-top: 1px; }
+.extendedSection { text-align: center; }
 
 .carouselCustom { margin-top: 1em; }
 .carouselInner { height: 100%; font-size: 16px; }
@@ -40,9 +32,7 @@ body {
 .gapDiv { height: 35px; }
 .carousel-indicators { bottom: -10px; }
 
-/**
- * HOME section
- */
+/** HOME section */
 .home-header {
     width: 100%;
     margin: auto;
@@ -84,7 +74,6 @@ body {
     border-radius: 100px;
     border: 0;
     display: inline-block;
-    /*color: #fff;*/
     font-weight: 800;
     letter-spacing: 2px;
     outline: 0;
@@ -100,6 +89,7 @@ body {
 }
 @media all and (max-width: 579px) {
     .homeTitle p { animation: appearCompactView 2.5s ease; font-size: 23px; -webkit-animation: appearCompactView 2.5s ease; font-size: 23px;}
+    .homeTitle span { display: none; }
 }
 @keyframes type { from { width: 0; } }
 @keyframes type2{
@@ -163,9 +153,7 @@ body {
 }*/
 /* end - moving divs */
 
-/**  
- * 'Back to top' button
- **/
+/** 'Back to top' button **/
 .backToTop {
     width: 58px;
     height: 58px;
@@ -197,65 +185,39 @@ body {
     right: 1px;
 }
 
-/** 
- * BIO section - carousel
- **/
+/** BIO section - carousel **/
 .table th, .table td { border-top: none !important; }
 .table { width: 70%; }
 .table td:nth-child(2) { text-align: left; }
 .skillDiv { margin-bottom: 17px; }
 
-/** 
- * flipping images 
- * Special thanks to David Walsh for the flipping CSS
+/** flipping images 
+ * Special THANKS to David Walsh for the flipping CSS
  **/
-.flip-container {
-    perspective: 1000;
-    -webkit-perspective: 1000;
-    -ms-perspective: 1000;
-}
-/* flip the pane when hovered */
+.flip-container { perspective: 1000; -webkit-perspective: 1000; -ms-perspective: 1000; }
 /*.flip-container:hover .flipper, .flip-container.hover .flipper {*/
     /*transform: rotateY(180deg);*/
     /*-webkit-transform: rotateY(180deg);*/
     /*-ms-transform: rotateY(180deg);*/
 /*}*/
-
 /* for IE 10 */
-.flip-container:hover .back {
-    transform: rotateY(0deg);
-}
-.flip-container:hover .front {
-    transform: rotateY(180deg);
-}
-.flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-
-    position: relative;
-}
+.flip-container:hover .back { transform: rotateY(0deg); }
+.flip-container:hover .front { transform: rotateY(180deg); }
+.flipper { transition: 0.6s; transform-style: preserve-3d; position: relative; }
 .front, .back {
     backface-visibility: hidden;
     transition: 0.6s;
     transform-style: preserve-3d;
-
     position: absolute;
     top: 0;
     left: 0;
 }
-/* IE 10 */
+/* end IE 10 */
 /*.flip-container.hover .flipper {*/
     /*transform: rotateY(180deg);*/
 /*}*/
-.flip-container, .front, .back {
-    width: 260px;
-    height: 170px;
-}
-.flip-container img{
-    height: 100%;
-    width: 100%;
-}
-/* flip speed goes here */
+.flip-container, .front, .back { width: 260px; height: 170px; }
+.flip-container img{ height: 100%; width: 100%; }
 .flipper {
     transition: 0.6s;
     -webkit-transition: 0.6s;
@@ -265,7 +227,6 @@ body {
     -ms-transform-style: preserve-3d;
     position: relative;
 }
-/* hide back of pane during swap */
 .front, .back {
     backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -273,22 +234,19 @@ body {
     top: 0;
     left: 0;
 }
-/* front pane, placed above back */
 .front {
     z-index: 2;
-    /* for firefox 31 */
     transform: rotateY(0deg);
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
 }
-/* back, initially hidden pane */
 .back {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
 }
 
-/* Form related */
+/* Form related CSS */
 .form {padding: 20px; opacity: 0.8}
 .icon { padding: 10px 50px; }
 .form-control:focus {
@@ -329,34 +287,17 @@ body {
 .container .text-muted {margin: 20px 0;color: #f1f1f1;}
 .buttonsDiv{border-top: 3px double #E0E0E0;padding-top: 1em;padding-bottom: 1em;margin-top:0;margin-bottom:1em;margin-right:0!important;margin-left:0!important;float:left;width:100%}
 .input-group {padding-bottom: 20px;}
-/*.input-group-addon {background-color: white; border: 0 white;}*/
 .progress {height: 12px;}
 .progress-bar {background-color: #475b68;}
 
 /* Coloured navigation bar */
-.navbar-default {
-    background-color: #660000;
-    border-color: #660000;
-}
-.nav {
-    font-size: 16px;
-}
-.navbar-default .navbar-brand {
-    color: #ecf0f1;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #FFCCCC;
-}
-.navbar-default .navbar-text {
-    color: #ecf0f1;
-}
-.navbar-default .navbar-nav > li > a {
-    color: snow;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    /*color: #FFCCCC;*/
-    color: lightyellow;
-}
+.navbar-default { background-color: #660000; border-color: #660000; }
+.nav { font-size: 16px; }
+.navbar-default .navbar-brand { color: #ecf0f1; }
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus { color: #FFCCCC; }
+.navbar-default .navbar-text { color: #ecf0f1; }
+.navbar-default .navbar-nav > li > a { color: snow; }
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus { color: lightyellow; }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #FFCCCC;
     background-color: #990000;
@@ -365,35 +306,14 @@ body {
     color: #FFCCCC;
     background-color: #990000;
 }
-.navbar-default .navbar-toggle {
-    border-color: #990000;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #990000;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #ecf0f1;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-    /*border-color: #ecf0f1;*/
-}
-.navbar-default .navbar-link {
-    color: #ecf0f1;
-}
-.navbar-default .navbar-link:hover {
-    color: #FFCCCC;
-}
+.navbar-default .navbar-toggle { border-color: #990000; }
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus { background-color: #990000; }
+.navbar-default .navbar-toggle .icon-bar { background-color: #ecf0f1; }
+.navbar-default .navbar-link { color: #ecf0f1; }
+.navbar-default .navbar-link:hover { color: #FFCCCC; }
 @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #ecf0f1;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #FFCCCC;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-        color: #FFCCCC;
-        background-color: #990000;
-    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #ecf0f1; }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus { color: #FFCCCC; }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus { color: #FFCCCC; background-color: #990000; }
 }
 /* End - Coloured navigation bar */
