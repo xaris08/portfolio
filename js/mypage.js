@@ -39,7 +39,11 @@ Page.init = (function() {
     });
 
     $("#sendBtn").on("click", function(){
-        Page.util.sendMail();
+        if (Page.util.isFormValidated()) {
+            Page.util.sendMail();
+        } else {
+            Page.util.showAlert("Please fill missing fields.");
+        }
     });
 
 //    $(".flip-container").click(function(){
@@ -108,13 +112,21 @@ Page.util = (function() {
                 }
             });
         },
-        
         showAlert: function(msg) {
             $("#collapseAlert .alert").html(msg);
             $("#collapseAlert").collapse("show");
             setTimeout(function(){
                 $("#collapseAlert").collapse("hide");
             },1300);
+        },
+        isFormValidated: function() {
+            var isValidated = true;
+            $(".form input, .form textarea").each(function(index,field){
+                if ($(field).val().length == 0) {
+                    isValidated = false;
+                }
+            });
+            return isValidated;
         }
     }
 })();
