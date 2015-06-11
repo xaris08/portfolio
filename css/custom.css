@@ -110,6 +110,7 @@ body {
     color: #fff;
     font-weight: 800;
     letter-spacing: 2px;
+    outline: 0;
 }
 .btn-group-lg>button:hover {
     background-color: #660000;

@@ -62,7 +62,8 @@ Page.util = (function() {
             var windowHeight = $(window).height();
             $("#home").height(windowHeight);
             $(".section").css({"min-height": windowHeight});
-            
+
+            $("body").show();
             var firstSection = $(".section")[1];
             Page.preferences.windowOffset = $(firstSection).offset().top;
         },
