@@ -12,22 +12,24 @@ body {
     /*-webkit-backface-visibility: hidden;*/
     /*-webkit-transform: scale(1);*/
     /*overflow: hidden;*/
-    background-color: #475b68;
+    /*background-color: #475b68;*/
+    background: url("../img/home.jpg") 100% 0 repeat fixed;
 }
-#home * { color: #000000; }
-#bio { background: url("../img/photo2.jpg") 50% 0 repeat fixed; }
+#home * { /*color: #000000; */ }
+#bio { background: url("../img/bio.jpg") 60% 0 repeat fixed; }
 #bio img {
     width:12em;
     border-radius: 50%;
 }
-#projects { background: url("../img/photo3.jpg") 50% 0 repeat fixed; }
-#contact { background: url("../img/photo1.jpg") 50% 0 repeat; font-size: 16px;}
+#projects { background: url("../img/projects.jpg") 100% 0 repeat fixed; }
+#contact { background: url("../img/contact.jpg") 50% 0 repeat; font-size: 16px;}
 
 .section { position: relative; padding-top: 1px; }
 .extendedSection { text-align: center; }
 
 .carouselCustom { margin-top: 1em; }
 .carouselInner { height: 100%; font-size: 16px; }
+.carousel-inner {min-height: 33em; }
 /*.carousel { position: initial; }*/
 .gapDiv { height: 35px; }
 .carousel-indicators { bottom: -10px; }
@@ -217,13 +219,16 @@ body {
     /*-ms-transform: rotateY(180deg);*/
 /*}*/
 /* for IE 10 */
-.flip-container:hover .back { transform: rotateY(0deg); }
-.flip-container:hover .front { transform: rotateY(180deg); }
-.flipper { transition: 0.6s; transform-style: preserve-3d; position: relative; }
+.flip-container:hover .back { transform: rotateY(0deg); -webkit-transform: rotateY(0deg);}
+.flip-container:hover .front { transform: rotateY(180deg); -webkit-transform: rotateY(180deg);}
+.flipper { transition: 0.6s; transform-style: preserve-3d; position: relative; -webkit-transition: 0.6s; -webkit-transform-style: preserve-3d;}
 .front, .back {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transition: 0.6s;
+    -webkit-transition: 0.6s;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     position: absolute;
     top: 0;
     left: 0;
@@ -282,7 +287,7 @@ body {
     border: 0;
 }
 .form textarea {background-color: #424245; box-sizing: border-box; width: 100%; border: 0;}
-.form textarea:focus { outline: white auto 5px; outline-color: white;}
+.form textarea:focus { outline-style: none; }
 #sendBtn {
     padding: 10px 20px;
     margin-right: 17px;
