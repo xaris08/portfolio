@@ -15,19 +15,9 @@ Page.init = (function() {
         }
     });
 
-    // Parallax effect
-//    $('.section').each(function(){
-//        var $bgobj = $(this); // assigning the object
-        $(window).scroll(function() {
-            // Scroll the background UP to (negative value of yPos) to get this effect
-//            var yPos = -($window.scrollTop() / 10);
-//            // Put together our final background position
-//            var coords = '50% '+ yPos + 'px';
-//            // Move the background
-//            $bgobj.css({ backgroundPosition: coords });
-            Page.util.setOnScrollActions.apply(this);
-        });
-//    });
+    $(window).scroll(function() {
+        Page.util.setOnScrollActions.apply(this);
+    });
 
     /* Navigate to desired section on the page. */
     $("#navbar a, .backToTop a, #navigationBtnGroup button").on("click", function() {
