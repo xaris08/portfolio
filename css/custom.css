@@ -16,7 +16,7 @@ body {
     background: url("../img/home.jpg") 100% 0 repeat fixed;
 }
 #home * { /*color: #000000; */ }
-#bio { background: url("../img/bio.jpg") 60% 0 repeat fixed; }
+#bio { background: url("../img/bio.jpg") 40% 0 repeat fixed; }
 #bio img {
     width:12em;
     border-radius: 50%;
