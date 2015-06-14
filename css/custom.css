@@ -232,7 +232,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    font-size: 16px; 
 }
+.flipper .front { opacity: 0.8; }
 /* end IE 10 */
 /*.flip-container.hover .flipper {*/
     /*transform: rotateY(180deg);*/
