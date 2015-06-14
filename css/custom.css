@@ -24,7 +24,7 @@ body {
 #projects { background: url("../img/projects.jpg") 100% 0 repeat fixed; }
 #contact { background: url("../img/contact.jpg") 50% 0 repeat; font-size: 16px;}
 
-.section { position: relative; padding-top: 1px; }
+.section { position: relative; padding-top: 1px; text-align: center; }
 .extendedSection { text-align: center; }
 
 .carouselCustom { margin-top: 1em; }
